@@ -1,0 +1,146 @@
+		public byte[] GetBytes()
+		{
+			ASN1 asn = new ASN1(48);
+			ArrayList arrayList = new ArrayList();
+			foreach (object obj in this._safeBags)
+			{
+				SafeBag safeBag = (SafeBag)obj;
+				if (safeBag.BagOID.Equals("1.2.840.113549.1.12.10.1.3"))
+				{
+					PKCS7.ContentInfo contentInfo = new PKCS7.ContentInfo(safeBag.ASN1[1].Value);
+					arrayList.Add(new X509Certificate(contentInfo.Content[0].Value));
+				}
+			}
+			ArrayList arrayList2 = new ArrayList();
+			ArrayList arrayList3 = new ArrayList();
+			foreach (X509Certificate x509Certificate in this.Certificates)
+			{
+				bool flag = false;
+				foreach (object obj2 in arrayList)
+				{
+					X509Certificate x509Certificate2 = (X509Certificate)obj2;
+					if (this.Compare(x509Certificate.RawData, x509Certificate2.RawData))
+					{
+						flag = true;
+					}
+				}
+				if (!flag)
+				{
+					arrayList2.Add(x509Certificate);
+				}
+			}
+			foreach (object obj3 in arrayList)
+			{
+				X509Certificate x509Certificate3 = (X509Certificate)obj3;
+				bool flag2 = false;
+				foreach (X509Certificate x509Certificate4 in this.Certificates)
+				{
+					if (this.Compare(x509Certificate3.RawData, x509Certificate4.RawData))
+					{
+						flag2 = true;
+					}
+				}
+				if (!flag2)
+				{
+					arrayList3.Add(x509Certificate3);
+				}
+			}
+			foreach (object obj4 in arrayList3)
+			{
+				X509Certificate cert = (X509Certificate)obj4;
+				this.RemoveCertificate(cert);
+			}
+			foreach (object obj5 in arrayList2)
+			{
+				X509Certificate cert2 = (X509Certificate)obj5;
+				this.AddCertificate(cert2);
+			}
+			if (this._safeBags.Count > 0)
+			{
+				ASN1 asn2 = new ASN1(48);
+				foreach (object obj6 in this._safeBags)
+				{
+					SafeBag safeBag2 = (SafeBag)obj6;
+					if (safeBag2.BagOID.Equals("1.2.840.113549.1.12.10.1.3"))
+					{
+						asn2.Add(safeBag2.ASN1);
+					}
+				}
+				if (asn2.Count > 0)
+				{
+					PKCS7.ContentInfo contentInfo2 = this.EncryptedContentInfo(asn2, "1.2.840.113549.1.12.1.3");
+					asn.Add(contentInfo2.ASN1);
+				}
+			}
+			if (this._safeBags.Count > 0)
+			{
+				ASN1 asn3 = new ASN1(48);
+				foreach (object obj7 in this._safeBags)
+				{
+					SafeBag safeBag3 = (SafeBag)obj7;
+					if (safeBag3.BagOID.Equals("1.2.840.113549.1.12.10.1.1") || safeBag3.BagOID.Equals("1.2.840.113549.1.12.10.1.2"))
+					{
+						asn3.Add(safeBag3.ASN1);
+					}
+				}
+				if (asn3.Count > 0)
+				{
+					ASN1 asn4 = new ASN1(160);
+					asn4.Add(new ASN1(4, asn3.GetBytes()));
+					asn.Add(new PKCS7.ContentInfo("1.2.840.113549.1.7.1")
+					{
+						Content = asn4
+					}.ASN1);
+				}
+			}
+			if (this._safeBags.Count > 0)
+			{
+				ASN1 asn5 = new ASN1(48);
+				foreach (object obj8 in this._safeBags)
+				{
+					SafeBag safeBag4 = (SafeBag)obj8;
+					if (safeBag4.BagOID.Equals("1.2.840.113549.1.12.10.1.5"))
+					{
+						asn5.Add(safeBag4.ASN1);
+					}
+				}
+				if (asn5.Count > 0)
+				{
+					PKCS7.ContentInfo contentInfo3 = this.EncryptedContentInfo(asn5, "1.2.840.113549.1.12.1.3");
+					asn.Add(contentInfo3.ASN1);
+				}
+			}
+			ASN1 asn6 = new ASN1(4, asn.GetBytes());
+			ASN1 asn7 = new ASN1(160);
+			asn7.Add(asn6);
+			PKCS7.ContentInfo contentInfo4 = new PKCS7.ContentInfo("1.2.840.113549.1.7.1");
+			contentInfo4.Content = asn7;
+			ASN1 asn8 = new ASN1(48);
+			if (this._password != null)
+			{
+				byte[] array = new byte[20];
+				this.RNG.GetBytes(array);
+				byte[] data = this.MAC(this._password, array, this._iterations, contentInfo4.Content[0].Value);
+				ASN1 asn9 = new ASN1(48);
+				asn9.Add(ASN1Convert.FromOid("1.3.14.3.2.26"));
+				asn9.Add(new ASN1(5));
+				ASN1 asn10 = new ASN1(48);
+				asn10.Add(asn9);
+				asn10.Add(new ASN1(4, data));
+				asn8.Add(asn10);
+				asn8.Add(new ASN1(4, array));
+				asn8.Add(ASN1Convert.FromInt32(this._iterations));
+			}
+			ASN1 asn11 = new ASN1(2, new byte[]
+			{
+				3
+			});
+			ASN1 asn12 = new ASN1(48);
+			asn12.Add(asn11);
+			asn12.Add(contentInfo4.ASN1);
+			if (asn8.Count > 0)
+			{
+				asn12.Add(asn8);
+			}
+			return asn12.GetBytes();
+		}
