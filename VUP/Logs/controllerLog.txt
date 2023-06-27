@@ -1,0 +1,150 @@
+[2023-06-27 00:21:50:42]  [Log]：
+日志开始记录时间：6/27/2023 12:21:50 AM
+Unity版本：2018.4.30f1
+软件版本：1.6.13.1
+操作系统版本: Windows 10  (10.0.0) 64bit
+处理器名称: Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
+图形设备: NVIDIA GeForce GTX 1050 Ti
+显卡驱动版本: Direct3D 11.0 [level 11.1]
+显存大小: 4018MB
+内存容量: 8067MB
+IP地址: 172.20.10.3
+
+[2023-06-27 00:21:51:01]  [Error]：tcp is null!
+0x00007FFA64E9693C (UnityPlayer) 
+0x00007FFA64E997CF (UnityPlayer) 
+0x00007FFA64E84DBD (UnityPlayer) 
+0x00007FFA654C73DE (UnityPlayer) UnityMain
+0x00007FFA6523DED5 (UnityPlayer) UnityMain
+0x0000018C1612EE26 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x0000018C1612EC23 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x0000018C1612EA00 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x0000018C1D06B285 (Mono JIT Code) UnityEngine.Debug:LogError (object)
+0x0000018C1D06AFCB (Mono JIT Code) NetController:Send (byte[])
+0x0000018C1D06AB6B (Mono JIT Code) BaseProtocolReq:Send ()
+0x0000018C1D068EEB (Mono JIT Code) FaceTrackIOSSeniorSettingComponent:Update ()
+0x0000018C124CF9B0 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x00007FFA6007B940 (mono-2.0-bdwgc) mono_get_runtime_build_info
+0x00007FFA60002172 (mono-2.0-bdwgc) mono_perfcounters_init
+0x00007FFA6000B16F (mono-2.0-bdwgc) mono_runtime_invoke
+0x00007FFA651D8BF4 (UnityPlayer) UnityMain
+0x00007FFA651D6420 (UnityPlayer) UnityMain
+0x00007FFA651C19A9 (UnityPlayer) UnityMain
+0x00007FFA651C1B63 (UnityPlayer) UnityMain
+0x00007FFA64FACAC0 (UnityPlayer) UnityMain
+0x00007FFA650DD417 (UnityPlayer) UnityMain
+0x00007FFA650DD4B9 (UnityPlayer) UnityMain
+0x00007FFA650DF47F (UnityPlayer) UnityMain
+0x00007FFA64EB72E5 (UnityPlayer) 
+0x00007FFA64EB591A (UnityPlayer) 
+0x00007FFA64EBA1D0 (UnityPlayer) 
+0x00007FFA64EBE39B (UnityPlayer) UnityMain
+0x00007FF70C9B11FA (VUP) 
+0x00007FFADD5C7614 (KERNEL32) BaseThreadInitThunk
+0x00007FFADF3226F1 (ntdll) RtlUserThreadStart
+(at:   :  0)
+[2023-06-27 00:21:51:35]  [Error]：tcp is null!
+0x00007FFA64E9693C (UnityPlayer) 
+0x00007FFA64E997CF (UnityPlayer) 
+0x00007FFA64E84DBD (UnityPlayer) 
+0x00007FFA654C73DE (UnityPlayer) UnityMain
+0x00007FFA6523DED5 (UnityPlayer) UnityMain
+0x0000018C1612EE26 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x0000018C1612EC23 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x0000018C1612EA00 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x0000018C1D06B285 (Mono JIT Code) UnityEngine.Debug:LogError (object)
+0x0000018C1D06AFCB (Mono JIT Code) NetController:Send (byte[])
+0x0000018C1D06AB6B (Mono JIT Code) BaseProtocolReq:Send ()
+0x0000018C1D068D6B (Mono JIT Code) FaceTrackIOSSeniorSettingComponent:Update ()
+0x0000018C124CF9B0 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x00007FFA6007B940 (mono-2.0-bdwgc) mono_get_runtime_build_info
+0x00007FFA60002172 (mono-2.0-bdwgc) mono_perfcounters_init
+0x00007FFA6000B16F (mono-2.0-bdwgc) mono_runtime_invoke
+0x00007FFA651D8BF4 (UnityPlayer) UnityMain
+0x00007FFA651D6420 (UnityPlayer) UnityMain
+0x00007FFA651C19A9 (UnityPlayer) UnityMain
+0x00007FFA651C1B63 (UnityPlayer) UnityMain
+0x00007FFA64FACAC0 (UnityPlayer) UnityMain
+0x00007FFA650DD417 (UnityPlayer) UnityMain
+0x00007FFA650DD4B9 (UnityPlayer) UnityMain
+0x00007FFA650DF47F (UnityPlayer) UnityMain
+0x00007FFA64EB72E5 (UnityPlayer) 
+0x00007FFA64EB591A (UnityPlayer) 
+0x00007FFA64EBA1D0 (UnityPlayer) 
+0x00007FFA64EBE39B (UnityPlayer) UnityMain
+0x00007FF70C9B11FA (VUP) 
+0x00007FFADD5C7614 (KERNEL32) BaseThreadInitThunk
+0x00007FFADF3226F1 (ntdll) RtlUserThreadStart
+(at:   :  0)
+[2023-06-27 00:21:52:32]  [Log]：loaded:   True
+
+[2023-06-27 00:21:52:56]  [Log]：StartConnect:   
+
+[2023-06-27 00:21:52:57]  [Log]：local ip:  127.0.0.1
+
+[2023-06-27 00:21:58:99]  [Log]：C:/Users/Chad/AppData/LocalLow/VUP/VUP
+
+[2023-06-27 00:21:59:37]  [Log]：Found Mic: Microphone (2- Logitech USB Microphone)
+
+[2023-06-27 00:21:59:39]  [Log]：Found Mic: External Microphone (Synaptics HD Audio)
+
+[2023-06-27 00:21:59:53]  [Log]：Cams count: 4
+
+[2023-06-27 00:21:59:89]  [Log]：Config setting successful
+
+[2023-06-27 00:22:00:31]  [Log]：send fps 60
+
+[2023-06-27 00:22:00:34]  [Log]：Logged event not in the dictionary ChangeScenitive
+
+[2023-06-27 00:22:00:52]  [Log]：GetcamInfo :Snap Camera
+
+[2023-06-27 00:22:02:20]  [Log]：set avatar: 959F2C8479F041B6E48880FB9D520F7B100902E3
+
+[2023-06-27 00:22:02:21]  [Log]：3  2  5第一次7
+
+[2023-06-27 00:22:02:24]  [Log]：load expression data
+
+[2023-06-27 00:22:02:50]  [Log]：人物加载高级参数：959F2C8479F041B6E48880FB9D520F7B100902E3.json
+
+[2023-06-27 00:22:02:51]  [Log]：Get avatar blendshape map json path: C:/Users/Chad/AppData/LocalLow/VUP/VUP/UserData/76561199045147078/VLiveData/BlendshapeConfig/959F2C8479F041B6E48880FB9D520F7B100902E3.json
+
+[2023-06-27 00:22:02:56]  [Log]：人物加载IOS高级参数：959F2C8479F041B6E48880FB9D520F7B100902E3.json
+
+[2023-06-27 00:22:02:68]  [Log]：Prop added
+
+[2023-06-27 00:22:02:68]  [Log]：Prop added
+
+[2023-06-27 00:22:02:69]  [Log]：Prop added
+
+[2023-06-27 00:22:02:70]  [Log]：Prop added
+
+[2023-06-27 00:22:02:72]  [Log]：Prop added
+
+[2023-06-27 00:22:02:73]  [Log]：Prop added
+
+[2023-06-27 00:22:03:35]  [Log]：dislpay窗口分辨率被调整为：637*848
+
+[2023-06-27 00:22:03:70]  [Log]：Config setting successful
+
+[2023-06-27 00:22:04:90]  [Log]：process handle LoginByTokenAck
+
+[2023-06-27 00:22:04:92]  [Log]：send fps 60
+
+[2023-06-27 00:22:04:94]  [Log]：set avatar: 959F2C8479F041B6E48880FB9D520F7B100902E3
+
+[2023-06-27 00:22:04:96]  [Log]：Click Eyeblink False
+
+[2023-06-27 00:22:05:14]  [Log]：load expression data
+
+[2023-06-27 00:22:05:71]  [Log]：scene ready
+
+[2023-06-27 00:22:05:73]  [Log]：set scene: E0701398209CD5AEED6053B9C3F2187C850CC9D6
+
+[2023-06-27 00:22:06:19]  [Log]：C:/Users/Chad/AppData/LocalLow/VUP/VUP/UserData/76561199045147078/VLiveData/Config/PropPlanInfo/default.json
+
+[2023-06-27 00:22:06:54]  [Log]：quit
+
+[2023-06-27 00:22:06:59]  [Log]：app quit
+
+[2023-06-27 00:22:06:66]  [Log]：force quit !
+
